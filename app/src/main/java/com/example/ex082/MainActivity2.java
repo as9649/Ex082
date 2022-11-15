@@ -31,7 +31,7 @@ public class MainActivity2 extends AppCompatActivity implements AdapterView.OnIt
         else{
             tv.setText("q = ");
             for (int i = 1; i < arr.length; i++)
-                arr[i] = (num * Math.pow(y,i)) + "";
+                arr[i] = String.format("%s", (num * Math.pow(y,i)));
         }
         ArrayAdapter<String> adp= new ArrayAdapter<>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, arr);
         lv1.setAdapter(adp);
@@ -66,6 +66,6 @@ public class MainActivity2 extends AppCompatActivity implements AdapterView.OnIt
         else{
             sum= num* (((Math.pow(y,i+1))-1)/(y-1));
         }
-        tv4.setText(sum+" ");
+        tv4.setText(String.format("%s", sum));
     }
 }
